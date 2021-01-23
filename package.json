@@ -1,7 +1,7 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "In this application, I have created a workout tracker. I was already provided with the front end code in the Public folder. In order to complete the backend code, I created a Mongo database with a Mongoose schema and handle routes with Express.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "mongoose": "^5.3.16",
-    "morgan": "^1.9.1"
-  }
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackedoutkeys/fitnessTracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackedoutkeys/fitnessTracker/issues"
+  },
+  "homepage": "https://github.com/blackedoutkeys/fitnessTracker#readme",
+  "devDependencies": {}
 }
