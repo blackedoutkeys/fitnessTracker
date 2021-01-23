@@ -29,7 +29,7 @@ function tallyExercises(exercises) {
       acc.totalDistance = (acc.totalDistance || 0) + curr.distance;
     }
     return acc;
-  }, {});
+}, {});
   return tallied;
 }
 
