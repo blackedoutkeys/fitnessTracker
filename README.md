@@ -23,25 +23,25 @@
 
   ## Features
  The user is greeted by the home screen upon "arriving" at the app.
-![Image of Home Screen ](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/gitbashimage.png)
+![Image of Home Screen ](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/homescreen.png)
 
 Then the user can continue from where they left off in a previous session, or start a new day of tracking. Either way, they are given the option between a resistance training screen:
 
-![Image of Drop Down Menus ](https://github.com/blackedoutkeys/readmeGenerator/blob/main/images/gitbashimage.png)
+![Image of Drop Down Menus ](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/user-entry.png)
 
-![Image of Resistance Screen](https://github.com/blackedoutkeys/readmeGenerator/blob/main/images/gitbashimage.png)
+![Image of Resistance Screen](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/resistanceTracking.png)
 
 or a cardio screen:
 
-![Image of Cardio Screen ](https://github.com/blackedoutkeys/readmeGenerator/blob/main/images/gitbashimage.png)
+![Image of Cardio Screen ](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/cardioTracking.png)
 
 Then once the user has completed all exercises they wish to track, they can select 'Dashboard' and see a finalized version of their workout:
 
-![Image of Finalized dashboard](https://github.com/blackedoutkeys/readmeGenerator/blob/main/images/readmeimage.png)
+![Image of Finalized dashboard](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/Dashboard_complete.png)
 
 
 
-![Image of Finalized dashboard](https://github.com/blackedoutkeys/readmeGenerator/blob/main/images/readmeimage.png)
+![Image of Finalized dashboard](https://github.com/blackedoutkeys/fitnessTracker/blob/main/images/updatedDash.png)
 
 Enjoy burning some calories!
 
