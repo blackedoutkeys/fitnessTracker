@@ -1,6 +1,10 @@
+//required dependencies
 const mongoose = require("mongoose");
+
+//mongoose schema
 const Schema = mongoose.Schema;
 
+//creating full schema for DB
 const WorkoutSchema = new Schema(
   {
     day: {
@@ -32,14 +36,7 @@ const WorkoutSchema = new Schema(
   },
   { toJSON: { virtuals: true } }
 );
-// add virtual for totalDuration
-WorkoutSchema.virtual("totalDuration").get(function () {
-  let totalDuration = 0;
-  for (let i = 0; i < this.exercises.length; i++) {
-    totalDuration += this.exercises[i].duration;
-  }
-  return totalDuration;
-});
+
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

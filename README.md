@@ -2,7 +2,7 @@
   
   In this application, I have created a workout tracker. I was already provided with the front end code in the Public folder. In order to complete the backend code, I created a Mongo database with a Mongoose schema and handle routes with Express.
 
-  [Link to Project]()
+  [Link to Project](https://fitness-tracker789.herokuapp.com/)
 
   
   ## Table of Contents
@@ -27,11 +27,11 @@
   ## Installation
   No special instructions are needed to install this project. Project does include usage of:
 
-  * 
-  * 
-  * 
-  * 
-  * 
+  * HTML/CSS
+  * JS
+  * Node.js
+  * Express
+  * MongoDB
   * 
   * 
   * 

@@ -1,42 +1,60 @@
-const router = require("express").Router();
+// Required Dependencies
+const path = require("path");
+const mongoose = require("mongoose");
 const db = require("../models");
+const router = require("./html-routes");
 
-router.get("/api/workout", (req, res) => {
-  db.Workout.find({})
-    .then(dbWorkout => {
-      res.json(dbWorkout);
+//  GET route that retrieves user input/workouts from the database
+router.get("/api/workouts", (req, res) => {
+  db.Workout.aggregate([
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration" },
+      },
+    },
+  ])
+    .then((data) => {
+      res.json(data);
     })
-    .catch(err => {
-      res.status(400).json(err);
+    .catch((err) => {
+      res.json(err);
     });
 });
 
-router.put("/api/workouts/:id", ({body, params},res) => {
-  let id = params.id;
+
+// PUT route that updates user input/workouts  from an existing workout in the database
+router.put("/api/workouts/:id", ({ body, params }, res) => {
   db.Workout.findByIdAndUpdate(
-      id,
-      { $push: { exercises: body }},
-      { new: true, runValidators: true }
-  ).then((dbWorkout) => {
-      res.json(dbWorkout);
-  })
-  .catch((err) => {
+    params.id,
+    {
+      $push: {
+        exercises: body,
+      },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  )
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
       res.json(err);
-  });
+    });
 });
 
-router.post("/api/workouts", async (req,res) => {
-  db.Workout.create(req.body)
-  .then((dbWorkout) => {
-      console.log(dbWorkout);
-      res.json(dbWorkout);
-  }).catch((err) => {
-      res.json(err);
-  });
-});
-
+// GET route that gets a range of workouts from user input/workouts within the database
 router.get("/api/workouts/range", (req, res) => {
-  db.Workout.find({}).limit(7)
+  db.Workout.aggregate([
+    { $sort: { day: -1 } },
+    { $limit: 7 },
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration" },
+      },
+    },
+])
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -44,6 +62,5 @@ router.get("/api/workouts/range", (req, res) => {
       res.json(err);
     });
 });
-
 
 module.exports = router;
