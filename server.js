@@ -1,14 +1,9 @@
 //Required Dependencies 
 const express = require("express");
 const mongoose = require("mongoose");
-const morgan = require("morgan");
-const db = require("./models");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-
-// Http request logger middleware
-app.use(logger("dev"));
 
 //express app setup for handle data parsing
 app.use(express.urlencoded({ extended: true }));
