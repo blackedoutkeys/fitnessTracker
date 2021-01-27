@@ -1,6 +1,8 @@
 //Required Dependencies 
 const express = require("express");
 const mongoose = require("mongoose");
+const logger = require("morgan");
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -9,11 +11,15 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+// HTTP request logger middleware
+app.use(logger("dev"));
+
 //static content pushed from the public folder
 app.use(express.static("public"));
 
 //connection to the database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workouts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
