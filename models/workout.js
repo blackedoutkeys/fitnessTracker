@@ -17,12 +17,12 @@ const WorkoutSchema = new Schema (
               type: {
                   type: String,
                   trim: true,
-                  required: "The exercise type is a requirement."
+                  required: "The exercise type is required."
               },
               name: {
                   type: String,
                   trim: true,
-                  required: "Name of exercise is a requirement."
+                  required: "Name of exercise is required."
               },
               duration: {
                   type: Number,
@@ -33,27 +33,18 @@ const WorkoutSchema = new Schema (
                   required: true
               },
               reps: {
-                  type: Number
+                  type: Number,
               },
               sets: {
-                  type: Number
+                  type: Number,
               },
               weight: {
-                  type: Number
-              }
-          }
-      ]
-  },
-  {toJSON: {virtuals: true}}
-)
+                  type: Number,
+              },
+          },
+      ],
+  })
 
-
-//Function to track duration of workout
-WorkoutSchema.virtual("totalDuration").get(function () {
-  return this.exercises.reduce((total, exercise) => {
-    return total + exercise.duration;
-  }, 0);
-});
 
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
